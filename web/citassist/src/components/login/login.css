@@ -1,0 +1,12 @@
+.login_container{
+    height: 100%;
+    align-content: center;
+}
+
+.ui.input {
+    margin: 40px 0 40px 0;
+}
+
+.ui.image {
+    margin: 0 0 70px 0;
+}
