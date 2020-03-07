@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import Login from '../login';
-import Dashboard from '../dashboard';
+import Login from '../Login';
+import Dashboard from '../Dashboard';
 import Auth from '../Auth';
 import React from "react";
 import {
@@ -14,11 +13,14 @@ import {
 export default ()=>{
   return(
     <Router>
-      <Switch>
-        <Route path='/login'>
+      <Switch >
+        <Route exact path="/">
           <Login />
         </Route>
-        <Auth path='/dashboard' component={Dashboard} />
+        <Route path='/Login'>
+          <Login />
+        </Route>
+        <Auth path='/Dashboard' component={Dashboard} />
       </Switch>
     </Router>
   )
