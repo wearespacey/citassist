@@ -7,6 +7,24 @@ export default StyleSheet.create({
         margin: 10
     },
     icon:{
-        margin: 10
+        padding: 5,
+        marginHorizontal: 10
+    },
+    imageSize:{
+        width: 60,
+        height: 60,
+        resizeMode:'stretch',
+        borderRadius: 80
+    },
+    iconView:{
+        borderRadius:100,
+        backgroundColor:'rgb(47,94,136)',
+        width: 60,
+        height: 60,
+        alignContent:'center',
+        justifyContent:'center'
+    },
+    centerIcon:{
+        alignSelf:'center'
     }
 });
