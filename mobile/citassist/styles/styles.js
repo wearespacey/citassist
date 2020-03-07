@@ -4,7 +4,7 @@ export default StyleSheet.create({
     centeredView: {
         flex: 1,
         justifyContent: 'center',
-        margin: 25
+        padding: 25,
     },
     lineSeparator: {
         marginVertical: 8,
