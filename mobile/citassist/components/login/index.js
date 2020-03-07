@@ -1,30 +1,38 @@
 import React from 'react';
-import { TextInput, View, Button, Alert } from 'react-native';
+import { TextInput, View, Button, Image } from 'react-native';
 import Styles from '../../styles/styles';
 import LoginStyles from './login-style';
+import logo from '../../assets/welcome-logo.png';
 
-export default function Login() {
+export default function Login(props) {
     const [username, onChangeUsername] = React.useState('');
     const [password, onChangePassword] = React.useState('');
 
     return (
         <View style={Styles.centeredView}>
-            <TextInput
-                onChangeText={usernameInput => onChangeUsername(usernameInput)}
-                value={username}
-                placeholder={"Entrez votre nom d'utilisateur"}
-                style={LoginStyles.default}
-            />
-            <TextInput
-                onChangeText={passwordInput => onChangePassword(passwordInput)}
-                value={password}
-                placeholder={'Entrez votre mot de passe'}
-                style={LoginStyles.default}
-            />
-            <Button
-                title='Connexion'
-                onPress={() => Alert.alert('Bon courage sans DB...')}
-            />
+            <Image style={LoginStyles.logo} source={logo} />
+            <View style={LoginStyles.login}>
+                <TextInput
+                    style={[LoginStyles.default, LoginStyles.username]}
+                    onChangeText={usernameInput =>
+                        onChangeUsername(usernameInput)
+                    }
+                    value={username}
+                    placeholder={"Entrez votre nom d'utilisateur"}
+                />
+                <TextInput
+                    style={[LoginStyles.default, LoginStyles.password]}
+                    onChangeText={passwordInput =>
+                        onChangePassword(passwordInput)
+                    }
+                    value={password}
+                    placeholder={'Entrez votre mot de passe'}
+                />
+                <Button
+                    title='Connexion'
+                    onPress={() => props.navigation.navigate('Home')}
+                />
+            </View>
         </View>
     );
 }

@@ -4,6 +4,14 @@ export default StyleSheet.create({
     centeredView: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        margin: 25
+    },
+    lineSeparator: {
+        marginVertical: 8,
+        borderBottomColor: '#737373',
+        borderBottomWidth: StyleSheet.hairlineWidth
+    },
+    blankSeparator: {
+        marginVertical: 8
     }
 });
