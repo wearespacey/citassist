@@ -71,7 +71,7 @@ namespace api
                 });               
             });
 
-            services.AddDbContext<CitAssistContext>(db => db.UseSqlServer(Configuration["Server=tcp:citassistserv.database.windows.net,1433;Initial Catalog=CitAssistDB;Persist Security Info=False;User ID=azzAdmin;Password=123Soleil;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"]));
+            services.AddDbContext<CitAssistContext>(db => db.UseSqlServer("Server=tcp:citassistserv.database.windows.net,1433;Initial Catalog=CitAssistDB;Persist Security Info=False;User ID=azzAdmin;Password=123Soleil;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 
