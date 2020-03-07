@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using api.Extension;
+using api.SignalR;
 
 namespace api
 {
@@ -35,6 +36,7 @@ namespace api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSignalR();
 
             services.AddSwaggerGen(c =>
             {
@@ -69,7 +71,7 @@ namespace api
                 });               
             });
 
-            services.AddDbContext<CitAssistContext>(db => db.UseSqlServer(Configuration["Database:Azure:ConnectionString"]));
+            services.AddDbContext<CitAssistContext>(db => db.UseSqlServer(Configuration["Server=tcp:citassistserv.database.windows.net,1433;Initial Catalog=CitAssistDB;Persist Security Info=False;User ID=azzAdmin;Password=123Soleil;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"]));
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
 
@@ -88,9 +90,9 @@ namespace api
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = Configuration["Jwt:Issuer"],
-                    ValidAudience = Configuration["Jwt:Issuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    ValidIssuer = "CitAccess.com",
+                    ValidAudience = "CitAccess.com",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("t92jdk423HvzHUUsBc1hWEV63RWSv57CPWn8UNA-fy5fJwiLRbGaHTMh2W37DRIcCPW1MWwA5Ng-Cr4OpyT7uAs8Ib9H2SWg3PB4oHSuyuoBmfotoiMn8iKfoCMu_4HBNbpdqTZz3Nm855oPfoWOYkIAAyVDq7sT5RtQ0RSZ6_TsQG7F5miTRHn1xmL_-AGskKnIu-myyhqQSxZb0E6ovQrS8T17D7P4W8KL0EmDLjK0TPrrbjGuiKK5eX4CG3uXVLnA5YoXNO8pVq6NApq-sTaD9P0I3083uxfv46X8cfhAb4gZfjUdLQVE5CkjMMLQYE7_jw7T5srrnbvlXGSceQ"))
                 };
             });
 
@@ -125,6 +127,7 @@ namespace api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ArrivalHub>("/arrivalHub");
             });
         }
     }
