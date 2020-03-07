@@ -1,0 +1,9 @@
+.login_container{
+    height: 100%;
+    align-content: center;
+}
+
+.inputC{
+    margin: 20px;
+    width: 300px;
+}
