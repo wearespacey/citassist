@@ -19,9 +19,6 @@ namespace api.Model
                  .ValueGeneratedOnAdd();
 
                 e.Property(ap => ap.Name);
-
-                e.Property(ap => ap.Arrival)
-                 .HasColumnType("Date");
             });
 
             modelBuidler.Entity<Account>(e =>
@@ -35,6 +32,53 @@ namespace api.Model
                 e.Property(ap => ap.Login);
 
                 e.Property(ap => ap.Password);
+            });
+
+            modelBuidler.Entity<Country>(e =>
+            {
+                e.HasKey(c => c.Id);
+
+                e.Property(c => c.Id)
+                 .HasColumnName("ID")
+                 .ValueGeneratedOnAdd();
+
+                e.Property(c => c.Name);
+
+                e.HasMany(c => c.Cities)
+                .WithOne(c => c.Country)
+                .HasForeignKey(c => c.CountryId);
+            });
+
+            modelBuidler.Entity<City>(e =>
+            {
+                e.HasKey(c => c.Id);
+
+                e.Property(c => c.Id)
+                 .HasColumnName("ID")
+                 .ValueGeneratedOnAdd();
+
+                e.Property(c => c.Name);
+
+                e.Property(x => x.CodePostal);
+
+                e.Property(c => c.CountryId);
+
+                e.HasMany(c => c.Streets)
+                .WithOne(c => c.City)
+                .HasForeignKey(c => c.CityId);
+            });
+
+            modelBuidler.Entity<Street>(e =>
+            {
+                e.HasKey(c => c.Id);
+
+                e.Property(c => c.Id)
+                 .HasColumnName("ID")
+                 .ValueGeneratedOnAdd();
+
+                e.Property(c => c.Name);
+
+                e.Property(e => e.CityId);
             });
         }
     }

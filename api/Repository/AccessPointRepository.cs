@@ -16,5 +16,10 @@ namespace api.Repository
             return await FindAll().OrderBy(ap => ap.Name)
                                   .ToListAsync();
         }
+
+        public async Task<AccessPoint> GetByIdAsync(int id)
+        {
+            return await FindByCondition(ap => ap.Id == id).FirstAsync();
+        }
     }
 }

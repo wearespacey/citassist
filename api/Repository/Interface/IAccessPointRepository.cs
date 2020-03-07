@@ -7,5 +7,6 @@ namespace api.Repository
     public interface IAccessPointRepository : IRepository<AccessPoint> 
     {
         Task<IEnumerable<AccessPoint>> GetAllAccessPointAsync();
+        Task<AccessPoint> GetByIdAsync(int id);
     }
 }
