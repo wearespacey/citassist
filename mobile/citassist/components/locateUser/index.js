@@ -1,29 +1,32 @@
-import WifiManager from 'react-native-wifi-reborn';
+import QRCodeScanner from 'react-native-qrcode-scanner';
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import LocateUserStyles from './locateUser-style';
 
 export default function LocateUser() {
-    const [ap, setAp] = useState();
-    // Get BSSID
-    WifiManager.getCurrentWifiSSID().then(
-        ssid => {
-            console.log('Your current connected wifi SSID is ' + ssid);
-            setAp(ssid);
-        },
-        () => {
-            console.log('Cannot get current SSID!');
-        }
-    );
+    onSuccess = e => {
+        Linking.openURL(e.data).catch(err =>
+            console.error('An error occured', err)
+        );
+    };
 
-    const accessPoints = ['Accueil', 'Parking', 'Urgences']; //Ceci est une API
-    const isAtHospital = accessPoints.includes(ap);
     return (
-        <View>
-            <Text>
-                {isAtHospital
-                    ? "Quelqu'un est en route"
-                    : "Vous n'êtes pas à l'hôpital"}
-            </Text>
-        </View>
+        <QRCodeScanner
+            onRead={() => onSuccess()}
+            topContent={
+                <Text style={LocateUserStyles.centerText}>
+                    Go to{' '}
+                    <Text style={LocateUserStyles.textBold}>
+                        wikipedia.org/wiki/QR_code
+                    </Text>{' '}
+                    on your computer and scan the QR code.
+                </Text>
+            }
+            bottomContent={
+                <TouchableOpacity style={LocateUserStyles.buttonTouchable}>
+                    <Text style={LocateUserStyles.buttonText}>OK. Got it!</Text>
+                </TouchableOpacity>
+            }
+        />
     );
 }

@@ -53,5 +53,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Cit@ssist a besoin de la caméra pour scanner un code QR</string>
 </dict>
 </plist>
