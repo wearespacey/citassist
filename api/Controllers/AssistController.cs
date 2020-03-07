@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
 using api.SignalR;
 using System.Text.Json;
+using Microsoft.AspNetCore.SignalR;
 
 namespace api.Controllers
 {
@@ -25,7 +26,7 @@ namespace api.Controllers
 
         private readonly ArrivalHub _arrivalHub;
 
-        public AssistController(IRepositoryWrapper repositoryWrapper, IMapper mapper, ArrivalHub arrivalHub)
+        public AssistController(IRepositoryWrapper repositoryWrapper, IMapper mapper, ArrivalHub  arrivalHub)
         {
             _repository = repositoryWrapper;
             _mapper = mapper;
@@ -36,12 +37,12 @@ namespace api.Controllers
         public async Task<ActionResult> Post([FromBody] PanelDTO userPanel)
         {
             var message = JsonSerializer.Serialize(userPanel);
-            await _arrivalHub.NoticeArrival(message);
+            await _arrivalHub.SendMessage(userPanel.Name, message);
             return Ok(new ResponseDTO { Success = true, Message = "Not implemented" });
         }
     }
 
     public class PanelDTO {
-        string name = string.Empty;
+        public string Name { get; set; }
     }
 }

@@ -5,9 +5,9 @@ namespace api.SignalR
 {
     public class ArrivalHub : Hub
     {
-        public async Task NoticeArrival(string message)
+        public async Task SendMessage(string user, string message)
         {
-            await Clients.All.SendAsync("ArrivalHub", message);
+            await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
 
     }
