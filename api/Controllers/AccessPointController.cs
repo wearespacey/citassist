@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using api.DTO;
 using api.Repository;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -12,6 +13,7 @@ namespace api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class AccessPointController : ControllerBase
     {
         private readonly IRepositoryWrapper _repository;

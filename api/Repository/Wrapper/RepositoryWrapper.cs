@@ -5,7 +5,8 @@ namespace api.Repository
     public class RepositoryWrapper : IRepositoryWrapper
     {
         private CitAssistContext _citAssistContext;
-        private IAccessPointRepository _accessPoint;        
+        private IAccessPointRepository _accessPoint;
+        private IAccountRepository _account;
 
         public IAccessPointRepository AccessPoint
         {
@@ -17,6 +18,19 @@ namespace api.Repository
                 }
 
                 return _accessPoint;
+            }
+        }
+
+        public IAccountRepository Account
+        {
+            get
+            {
+                if (_account == null)
+                {
+                    _account = new AccountRepository(_citAssistContext);
+                }
+
+                return _account;
             }
         }
 
