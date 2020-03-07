@@ -239,6 +239,8 @@ PODS:
     - React
   - RNScreens (2.2.0):
     - React
+  - RNSVG (12.0.2):
+    - React
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -277,6 +279,7 @@ DEPENDENCIES:
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -348,6 +351,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -385,8 +390,10 @@ SPEC CHECKSUMS:
   RNPermissions: 2f74237e97b08beda01e914301e12524ddddf5b8
   RNReanimated: 031fe8d9ea93c2bd689a40f05320ef9d96f74d7f
   RNScreens: 812b79d384e2bea7eebc4ec981469160d4948fd5
+  RNSVG: 9f7446f2e8fb1a5dc66a4aff58c33d367291d34c
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
+PODFILE CHECKSUM: e0d7d272ceadd79c42c0a55c033940d16f660f65
 PODFILE CHECKSUM: efc0a3b52384ea7e337b85f2ccc1080cee20897e
 
 COCOAPODS: 1.9.0

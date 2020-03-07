@@ -39,40 +39,9 @@ export default function Login(props) {
                     <Text style={LoginStyles.loginText}>
                         Connexion
                     </Text>
-                </TouchableOpacity>
-                    
+                </TouchableOpacity>        
                 </View>
        </KeyboardAwareScrollView>
-        //  <KeyboardAwareScrollView style={{flex:1,backgroundColor:'red'}}>
-        //     <View style={Styles.centeredView}>
-        //         <Image style={LoginStyles.logo} source={logo} />
-        //         <View style={LoginStyles.login}>
-        //             <TextInput
-        //                 style={[LoginStyles.default, LoginStyles.username]}
-        //                 onChangeText={usernameInput =>
-        //                     onChangeUsername(usernameInput)
-        //                 }
-        //                 value={username}
-        //                 placeholder={"Nom d'utilisateur"}
-        //             />
-        //             <TextInput
-        //                 style={[LoginStyles.default, LoginStyles.password]}
-        //                 onChangeText={passwordInput =>
-        //                     onChangePassword(passwordInput)
-        //                 }
-        //                 secureTextEntry={true} 
-        //                 textContentType='password'
-        //                 value={password}
-        //                 placeholder={'Mot de passe'}
-        //             />
-        //             <TouchableOpacity onPress={() => connect()} style={LoginStyles.loginButton}>
-        //                 <Text style={LoginStyles.loginText}>
-        //                     Connexion
-        //                 </Text>
-        //             </TouchableOpacity>
-                    
-        //         </View>
-        //     </View>
-        //    </KeyboardAwareScrollView>
+
     );
 }
