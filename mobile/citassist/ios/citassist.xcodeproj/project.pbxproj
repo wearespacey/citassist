@@ -17,6 +17,11 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* citassistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* citassistTests.m */; };
 		A79EA7D8DA37E71E0D64A328 /* libPods-citassist.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4F99736713AACE01F39EF6 /* libPods-citassist.a */; };
+		AA903BDF2413F0B500D9DC96 /* RNWifi.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = AA903BDD2413F0B500D9DC96 /* RNWifi.xcworkspace */; };
+		AA903BE02413F0B500D9DC96 /* RNWifi.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = AA903BDD2413F0B500D9DC96 /* RNWifi.xcworkspace */; };
+		AA903BE12413F0B500D9DC96 /* RNWifi.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = AA903BDD2413F0B500D9DC96 /* RNWifi.xcworkspace */; };
+		AA903BE22413F0B500D9DC96 /* RNWifi.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = AA903BDD2413F0B500D9DC96 /* RNWifi.xcworkspace */; };
+		AA903BE42413F1DC00D9DC96 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA903BE32413F1DC00D9DC96 /* ExternalAccessory.framework */; };
 		F3F367DFB4E058F9512BAF47 /* libPods-citassist-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3A7D57E2DFB750FC4E59F2 /* libPods-citassist-tvOSTests.a */; };
 		FD45B46054A677016FC232E7 /* libPods-citassistTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E31A7828FEFEE04862B564 /* libPods-citassistTests.a */; };
 		FFE01FB66EC3BEC3EAF19FD4 /* libPods-citassist-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 217660F31A964AF7CC7E4330 /* libPods-citassist-tvOS.a */; };
@@ -62,6 +67,9 @@
 		7A4F99736713AACE01F39EF6 /* libPods-citassist.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-citassist.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		97B58EC3CCF3A3565DAF4F2B /* Pods-citassist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-citassist.release.xcconfig"; path = "Target Support Files/Pods-citassist/Pods-citassist.release.xcconfig"; sourceTree = "<group>"; };
 		A180A6DF1548F26EEF1ED363 /* Pods-citassistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-citassistTests.debug.xcconfig"; path = "Target Support Files/Pods-citassistTests/Pods-citassistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA903BDD2413F0B500D9DC96 /* RNWifi.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = RNWifi.xcworkspace; path = "../node_modules/react-native-wifi-reborn/ios/RNWifi.xcworkspace"; sourceTree = "<group>"; };
+		AA903BE32413F1DC00D9DC96 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		AA903BE52413F1DC00D9DC96 /* citassist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = citassist.entitlements; path = citassist/citassist.entitlements; sourceTree = "<group>"; };
 		CCCEBF07A178F6B66FD92080 /* Pods-citassist-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-citassist-tvOS.release.xcconfig"; path = "Target Support Files/Pods-citassist-tvOS/Pods-citassist-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		D363ACD065A9CEBCF340480E /* Pods-citassist-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-citassist-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-citassist-tvOSTests/Pods-citassist-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB3D62A82F5629AEDEE5E0E3 /* Pods-citassist-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-citassist-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-citassist-tvOS/Pods-citassist-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA903BE42413F1DC00D9DC96 /* ExternalAccessory.framework in Frameworks */,
 				A79EA7D8DA37E71E0D64A328 /* libPods-citassist.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +134,8 @@
 		13B07FAE1A68108700A75B9A /* citassist */ = {
 			isa = PBXGroup;
 			children = (
+				AA903BE52413F1DC00D9DC96 /* citassist.entitlements */,
+				AA903BDD2413F0B500D9DC96 /* RNWifi.xcworkspace */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -139,6 +150,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA903BE32413F1DC00D9DC96 /* ExternalAccessory.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				7A4F99736713AACE01F39EF6 /* libPods-citassist.a */,
@@ -284,7 +296,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -294,6 +306,11 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = JG8RX5U25F;
+						SystemCapabilities = {
+							com.apple.WAC = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -334,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA903BE02413F0B500D9DC96 /* RNWifi.xcworkspace in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +361,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				AA903BDF2413F0B500D9DC96 /* RNWifi.xcworkspace in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+				AA903BE12413F0B500D9DC96 /* RNWifi.xcworkspace in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA903BE22413F0B500D9DC96 /* RNWifi.xcworkspace in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +614,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = citassistTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -614,6 +636,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = JG8RX5U25F;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = citassistTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -633,9 +656,11 @@
 			baseConfigurationReference = 64BD9E176636131745E69C51 /* Pods-citassist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = citassist/citassist.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = JG8RX5U25F;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = citassist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -654,8 +679,10 @@
 			baseConfigurationReference = 97B58EC3CCF3A3565DAF4F2B /* Pods-citassist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = citassist/citassist.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JG8RX5U25F;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = citassist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -683,6 +710,7 @@
 				DEVELOPMENT_TEAM = JG8RX5U25F;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "citassist-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -712,6 +740,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JG8RX5U25F;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "citassist-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -740,6 +769,7 @@
 				DEVELOPMENT_TEAM = JG8RX5U25F;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "citassist-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -768,6 +798,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JG8RX5U25F;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "citassist-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
