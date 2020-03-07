@@ -1,18 +1,19 @@
+import 'react-native-gesture-handler';
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Login from './components/login';
 import Home from './components/home';
-import Styles from './styles/styles';
 
-import {
-  View,
-} from 'react-native';
+const Stack = createStackNavigator();
 
-const App= () => {
-  return (
-    <View style={Styles.test}>
-      <Home/>
-      {/* TODO navigator */}
-    </View>
-  );
-};
-
-export default App;
+export default function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name='Connexion' component={Login} />
+                <Stack.Screen name='Accueil' component={Home} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
