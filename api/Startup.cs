@@ -25,6 +25,8 @@ namespace api
 {
     public class Startup
     {
+        private string _corsPolicyName;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -118,12 +120,18 @@ namespace api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCors(c => c.WithOrigins(
+                    "http://localhost:3000"
+                )
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials());
 
             app.UseEndpoints(endpoints =>
             {

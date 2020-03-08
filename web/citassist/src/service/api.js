@@ -1,15 +1,13 @@
-import { HubConnection } from 'signalr-client-react';
 import React from 'react';
 
 export default function Hub() {
-    let connection = new HubConnection('http://localhost:5000/arrivalHub');
+    const signalR = require('@aspnet/signalr');
+    let connection = new signalR.HubConnectionBuilder()
+        .withUrl('http://localhost:5000/arrivalhub')
+        .build();
 
-    connection.on('newMessage', data => {
+    connection.on('ReceiveMessage', data => {
         console.log(data);
-    });
-
-    connection.on('error', error => {
-        console.log(error);
     });
 
     connection.start();
