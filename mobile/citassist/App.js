@@ -6,6 +6,7 @@ import Login from './components/login';
 import Home from './components/home';
 import LocateUser from './components/locateUser';
 import Arrival from './components/arrival';
+import HomeNavigation from './components/home-navigation';
 
 const Stack = createStackNavigator();
 
@@ -13,7 +14,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName='Arrival'
+                initialRouteName='Login'
             >
                 <Stack.Screen
                     name='Login'
@@ -22,8 +23,8 @@ export default function App() {
                 />
                 <Stack.Screen
                     name='Home'
-                    component={Home}
-                    options={{ title: 'Accueil' }}
+                    component={HomeNavigation}
+                    options={{ title: 'Accueil', headerLeft:false, gestureEnabled: false}}
                 />
                 <Stack.Screen
                     name='LocateUser'

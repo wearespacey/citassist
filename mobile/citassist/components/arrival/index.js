@@ -15,14 +15,13 @@ const Arrival = (props)=>{
     const [needs, setNeeds] = useState(new Array())
     const [i, setI] = useState(0);
 
+
     useEffect(()=>{
 
     });
 
     const assist = ()=>{
-        console.log(disabilities);
-        console.log(has);
-        console.log(needs)
+        props.route.params.navigation.navigation.navigate('LocateUser', {disabilities: disabilities, has: has, needs: needs})
     }
 
     const setDisability = (disability)=>{
@@ -57,7 +56,7 @@ const Arrival = (props)=>{
 
     return(
         <ScrollView>
-            <View style={{padding: 20}}>
+            <View style={{paddingVertical: 5, paddingHorizontal: 20,}}>
                 <Text style={ArrivalStyle.text}>Je suis</Text>
                 <View style={{padding: 20, flexDirection:'row', alignSelf:'center'}}>
                     <View>
@@ -86,7 +85,7 @@ const Arrival = (props)=>{
                     </View>
                 </View>
             </View>
-            <View style={{paddingVertical: 10, marginHorizontal: 20}}>
+            <View style={{paddingVertical: 5, paddingHorizontal: 20,}}>
                 <Text style={ArrivalStyle.text}>J'ai</Text>
                 <View style={{padding: 20, flexDirection:'row', alignSelf:'center'}}>
                     <View>
@@ -121,7 +120,7 @@ const Arrival = (props)=>{
                     </View>
                 </View>
             </View>
-            <View style={{padding: 20}}>
+            <View style={{paddingVertical: 5, paddingHorizontal: 20,}}>
                 <Text style={ArrivalStyle.text}>J'ai besoin</Text>
                 <View style={{padding: 20, flexDirection:'row', alignSelf:'center'}}>
                      <View>
@@ -149,7 +148,7 @@ const Arrival = (props)=>{
                 </View>
             </View>
             <TouchableOpacity onPress={()=>assist()} style={ArrivalStyle.assistButton}>
-                <Text style={ArrivalStyle.assistText}>@ssistez moi</Text>
+                <Text style={ArrivalStyle.assistText}>Valider</Text>
             </TouchableOpacity>
         </ScrollView>
     )

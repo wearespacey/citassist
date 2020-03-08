@@ -17,8 +17,8 @@ export default StyleSheet.create({
         borderRadius: 80
     },
     imageIcon:{
-        width:40,
-        height:40,
+        width:30,
+        height:30,
         resizeMode:'contain',
         alignSelf:'center'
     },
@@ -39,19 +39,19 @@ export default StyleSheet.create({
         borderRadius: 10,
         width: '45%',
         alignSelf:'center',
-        marginTop:20
+        marginTop:25
     },
     assistText:{
         // color:'rgb(0,96,156)',
         color:'white',
-        fontSize: 25,
+        fontSize: 20,
         // fontWeight:'bold',
         alignSelf:'center',
         textAlign:'center'
     },
     label:{
         textAlign:'center',
-        fontSize:12,
+        fontSize:10,
         fontWeight:'bold',
         alignSelf:'center'
     },

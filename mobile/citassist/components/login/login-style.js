@@ -4,9 +4,10 @@ export default StyleSheet.create({
     login: {
         // backgroundColor:'blue',
         width: '100%',
-        padding: 10,
-        marginTop: '30%',
-        alignSelf:'flex-end'
+        // padding: 10,
+        // marginTop: '30%',
+        // justifyContent:'center',
+        flex:1
     },
     logo: {
         marginBottom: 50,
@@ -21,27 +22,33 @@ export default StyleSheet.create({
         padding: 20,
         borderRadius: 10,
         margin: 15,
-        height: '10%'
+        height: 60,
+        width:'80%',
+        alignSelf:'center'
     },
-    username: {},
+    username: {
+    },
     password: {},
     loginButton:{
-        width:'60%',
+        width:'45%',
+        height:60,
         backgroundColor: '#43a367',
         borderRadius: 10,
         alignSelf:'center',
         padding: 15,
-        marginTop: 15
+        marginTop: 15,
+        justifyContent:'center'
     },
     loginText:{
         textAlign:'center',
-        color:'white'
+        color:'white',
+        alignSelf:'center'
     },
     logo2:{
         margin: 30,
         marginTop: 100,
-        width: '65%',
-        height:'25%',
+        width: 275,
+        height:150,
         resizeMode:'stretch'
     }
 

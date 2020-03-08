@@ -1,32 +1,35 @@
 import QRCodeScanner from 'react-native-qrcode-scanner';
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Alert, Button } from 'react-native';
 import LocateUserStyles from './locateUser-style';
 
-export default function LocateUser() {
+export default function LocateUser(props) {
     onSuccess = e => {
-        Linking.openURL(e.data).catch(err =>
-            console.error('An error occured', err)
-        );
+        Alert.alert('Votre demande a été envoyée', "Vous serez notifiée lorsqu'elle sera prise en charge",
+            [
+                {
+                    text: 'OK', 
+                    onPress: () => {
+                        props.navigation.pop()
+                    }
+                },
+            ]            
+        )
+        
     };
 
     return (
         <QRCodeScanner
             onRead={() => onSuccess()}
             topContent={
-                <Text style={LocateUserStyles.centerText}>
-                    Go to{' '}
-                    <Text style={LocateUserStyles.textBold}>
-                        wikipedia.org/wiki/QR_code
-                    </Text>{' '}
-                    on your computer and scan the QR code.
-                </Text>
+                <View style={{justifyContent:'center', alignContent:'center'}}>
+                    <Text style={LocateUserStyles.centerText}>
+                        Scannez le QR Code afin d'indiquer l'étage auquel vous vous trouvez
+                    </Text>
+                </View>
             }
-            bottomContent={
-                <TouchableOpacity style={LocateUserStyles.buttonTouchable}>
-                    <Text style={LocateUserStyles.buttonText}>OK. Got it!</Text>
-                </TouchableOpacity>
-            }
+
         />
+        
     );
 }
