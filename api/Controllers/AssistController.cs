@@ -36,13 +36,31 @@ namespace api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] PanelDTO userPanel)
         {
-            var message = JsonSerializer.Serialize(userPanel);
-            await _arrivalHub.SendMessage(userPanel.Name, message);
-            return Ok(new ResponseDTO { Success = true, Message = "Not implemented" });
+            var user = new User();
+            user.UserId = userPanel.UserId;
+            user.Name = "John Doe";
+            user.Panel = userPanel;
+
+            var message = JsonSerializer.Serialize(user);
+
+            await _arrivalHub.SendMessage(user.Name, message);
+            return Ok(new ResponseDTO { Success = true, Message = "Request transfered to backoffice" });
         }
     }
 
     public class PanelDTO {
+        public string UserId { get; set; }
+        public string Position { get; set; }
+        public string[] Disabilities { get; set; }
+        public string[] Has { get; set; }
+        public string[] Needs { get; set; }
+    }
+
+    public class User {
+
+        public string UserId { get; set; }
         public string Name { get; set; }
+        public string Handicap { get; set; }
+        public PanelDTO Panel { get; set; }
     }
 }
