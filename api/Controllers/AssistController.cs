@@ -38,7 +38,10 @@ namespace api.Controllers
         {
             var user = new User();
             user.UserId = userPanel.UserId;
-            user.Name = "John Doe";
+            user.FirstName = "Jane";
+            user.Name = "Doe";
+            user.Birthdate = "27/10/1977";
+            user.Nationality = "Belge";
             user.Panel = userPanel;
 
             var message = JsonSerializer.Serialize(user);
@@ -60,6 +63,9 @@ namespace api.Controllers
 
         public string UserId { get; set; }
         public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string Birthdate { get; set; }
+        public string Nationality { get; set; }
         public string Handicap { get; set; }
         public PanelDTO Panel { get; set; }
     }
