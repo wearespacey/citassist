@@ -1,0 +1,21 @@
+.dashboard_container{
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    margin: 30px 0 0 0;
+}
+
+.dashboard_menu_left {
+    background-color: #68C958;
+    display: block;
+    position: absolute;
+}
+
+.dashboard_menu_right {
+    background-color: #68C958;
+    margin: 0;
+    padding: 0;
+}
