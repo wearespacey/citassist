@@ -38,11 +38,11 @@ namespace api.Controllers
         {
             var user = new User();
             user.UserId = userPanel.UserId;
-            user.FirstName = "Jane";
-            user.Name = "Doe";
-            user.Birthdate = "27/10/1977";
-            user.Nationality = "Belge";
-            user.Panel = userPanel;
+            user.FirstName = userPanel.FirstName;
+            user.Name = userPanel.Name;
+            user.Birthdate = userPanel.Birthdate;
+            user.Nationality = userPanel.Nationality;
+            user.Panel = userPanel.Panel;
 
             var message = JsonSerializer.Serialize(user);
 
