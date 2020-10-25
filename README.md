@@ -46,7 +46,7 @@
 The SpaceY team arrived at the [Citizens of Wallonia hackathon](https://www.citizensofwallonia.be/) with 4 highly motivated developers, but without project.
 Luckily for us, we met with the team of the CHR La Citadelle of Liège who had a project, but no developers.
 
-We thus created **Citassist**, a React Native mobile application that allows a patient to scan a QR code with the Citassist app, as well as to quickly fill a form with his specific needs. An employee of the hospital will immediately receive a notification on the web app and will dispatch a nurse to the patient.
+We thus created **Citassist**, a React Native mobile app that allows a patient to scan a QR code with the Citassist app, as well as to quickly fill a form with his specific needs. An employee of the hospital will immediately receive a notification on the web app and will dispatch a nurse to the patient.
 
 ### Built With
 
