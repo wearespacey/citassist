@@ -46,6 +46,12 @@ namespace api.Controllers
             return Ok(new ResponseDTO { Success = true, Message = "Not implemented" });
         }
 
+        [HttpPost("/Create/{id}")]
+        public async Task<ActionResult> Create(int id)
+        {
+            return Ok(new ResponseDTO { Success = true, Message = "Not implemented" });
+        }
+
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id)
         {
